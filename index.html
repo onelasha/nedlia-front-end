@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nedlia.com - Revolutionizing Product Placement in Streaming Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #8B5CF6;
+            --primary-magenta: #EC4899;
+            --primary-blue: #3B82F6;
+            --dark-bg: #0F0F1E;
+            --darker-bg: #050508;
+            --text-light: #E5E7EB;
+            --text-gray: #9CA3AF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--darker-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-magenta);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+            margin-top: 80px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-purple);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-magenta);
+            top: 50%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+
+        .shape3 {
+            width: 350px;
+            height: 350px;
+            background: var(--primary-blue);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-30px, 30px) scale(0.9);
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-purple);
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .feature-box h4 {
+            color: var(--primary-magenta);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Clients Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .client-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .client-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-purple);
+        }
+
+        .client-card p {
+            color: var(--text-gray);
+        }
+
+        .client-type {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: rgba(236, 72, 153, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            color: var(--primary-magenta);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(15, 15, 30, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary-purple);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--text-light);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-content p {
+            color: var(--text-gray);
+        }
+
+        .contact-form {
+            background: rgba(15, 15, 30, 0.6);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(15, 15, 30, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-magenta);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-magenta));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Map */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        footer p {
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            #showcase > div > div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Nedlia.com</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#showcase">Platform</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Revolutionizing Product Placement in Streaming Content</h1>
+            <p>Seamlessly integrate, track, and monetize product placements across all major streaming platforms</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Nedlia.com</h2>
+        <p class="section-subtitle">The future of product placement technology</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Transforming Content Monetization</h3>
+                <p>Nedlia.com is the industry-leading platform that bridges the gap between content creators, brands, and streaming platforms. Our cutting-edge technology enables seamless product placement integration, real-time tracking, and performance-based monetization.</p>
+                <p>We empower marketing agencies to manage multiple clients effortlessly while providing production companies with the tools they need to maximize revenue from product placements in streaming content.</p>
+            </div>
+            <div class="features">
+                <div class="feature-box">
+                    <h4>🎬 Editor Plugins</h4>
+                    <p>Powerful plugins for Final Cut Pro and major editing software to place products with precision</p>
+                </div>
+                <div class="feature-box">
+                    <h4>📊 SaaS Platform</h4>
+                    <p>Comprehensive tracking and budget management for all your product placements</p>
+                </div>
+                <div class="feature-box">
+                    <h4>🛒 Interactive Experience</h4>
+                    <p>Smart video players with shopping features and QR code integration</p>
+                </div>
+                <div class="feature-box">
+                    <h4>💰 Revenue Sharing</h4>
+                    <p>Flexible monetization models with engagement-based pricing tiers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="showcase" style="background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);">
+        <h2 class="section-title">Platform Overview</h2>
+        <p class="section-subtitle">Explore our comprehensive suite of tools and integrations</p>
+        
+        <!-- SaaS Dashboard -->
+        <div style="margin-bottom: 6rem;">
+            <h3 style="color: var(--primary-purple); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">SaaS Management Platform</h3>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Comprehensive dashboard to manage all your product placement campaigns, track budgets, monitor performance, and analyze engagement metrics in real-time.
+            </p>
+            <div style="border-radius: 20px; overflow: hidden; border: 2px solid rgba(139, 92, 246, 0.3); box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);">
+                <img src="images/saas-dashboard.png" alt="Nedlia SaaS Dashboard" style="width: 100%; display: block;">
+            </div>
+        </div>
+
+        <!-- Editor Plugin -->
+        <div style="margin-bottom: 6rem;">
+            <h3 style="color: var(--primary-magenta); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Video Editor Plugins</h3>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Seamlessly integrate product placements directly in your editing workflow with plugins for Final Cut Pro, Adobe Premiere, DaVinci Resolve, and more. Precise timing control and metadata management built right into your favorite editing software.
+            </p>
+            <div style="border-radius: 20px; overflow: hidden; border: 2px solid rgba(236, 72, 153, 0.3); box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);">
+                <img src="images/editor-plugin.png" alt="Nedlia Editor Plugin" style="width: 100%; display: block;">
+            </div>
+        </div>
+
+        <!-- Streaming Experience -->
+        <div style="margin-bottom: 4rem;">
+            <h3 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Interactive Streaming Experience</h3>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Transform passive viewing into interactive shopping experiences. Smart indicators show when products are featured, and viewers can pause to explore details and make purchases.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h4 style="color: var(--text-light); margin-bottom: 1rem; text-align: center;">Active Playback</h4>
+                    <p style="color: var(--text-gray); text-align: center; margin-bottom: 1rem; font-size: 0.95rem;">Shopping cart icon appears when product placements are on screen</p>
+                    <div style="border-radius: 15px; overflow: hidden; border: 2px solid rgba(59, 130, 246, 0.3); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+                        <img src="images/streaming-player-normal.png" alt="Streaming Player - Normal View" style="width: 100%; display: block;">
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-light); margin-bottom: 1rem; text-align: center;">Paused - Product Details</h4>
+                    <p style="color: var(--text-gray); text-align: center; margin-bottom: 1rem; font-size: 0.95rem;">Interactive overlay with product info and QR code for mobile shopping</p>
+                    <div style="border-radius: 15px; overflow: hidden; border: 2px solid rgba(59, 130, 246, 0.3); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+                        <img src="images/streaming-player-paused.png" alt="Streaming Player - Paused with Details" style="width: 100%; display: block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile App -->
+        <div style="margin-bottom: 4rem;">
+            <h3 style="color: var(--primary-purple); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Mobile Shopping Experience</h3>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Scan the QR code from your TV screen and seamlessly transition to mobile for instant purchasing. Works perfectly with Apple TV, Roku, and other platforms without browser access.
+            </p>
+            <div style="max-width: 500px; margin: 0 auto; border-radius: 30px; overflow: hidden; border: 2px solid rgba(139, 92, 246, 0.3); box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);">
+                <img src="images/mobile-app-product.png" alt="Nedlia Mobile App" style="width: 100%; display: block;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <h2 class="section-title">Our Trusted Partners</h2>
+        <p class="section-subtitle">Working with industry leaders across production, brands, and streaming</p>
+        
+        <h3 style="color: var(--primary-purple); font-size: 2rem; margin-bottom: 2rem; text-align: center;">Production Companies</h3>
+        <div class="clients-grid">
+            <div class="client-card">
+                <h3>Crimson Studios</h3>
+                <p>Award-winning film and series production</p>
+                <span class="client-type">Production</span>
+            </div>
+            <div class="client-card">
+                <h3>Apex Productions</h3>
+                <p>Premium content creators for streaming</p>
+                <span class="client-type">Production</span>
+            </div>
+            <div class="client-card">
+                <h3>Velocity Media Group</h3>
+                <p>Digital-first entertainment studio</p>
+                <span class="client-type">Production</span>
+            </div>
+            <div class="client-card">
+                <h3>Horizon Pictures</h3>
+                <p>Blockbuster film production house</p>
+                <span class="client-type">Production</span>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary-magenta); font-size: 2rem; margin-bottom: 2rem; margin-top: 4rem; text-align: center;">Brand Partners</h3>
+        <div class="clients-grid">
+            <div class="client-card">
+                <h3>TechNova Electronics</h3>
+                <p>Leading consumer electronics brand</p>
+                <span class="client-type">Brand</span>
+            </div>
+            <div class="client-card">
+                <h3>Stellar Automotive</h3>
+                <p>Luxury and electric vehicles</p>
+                <span class="client-type">Brand</span>
+            </div>
+            <div class="client-card">
+                <h3>Urban Threads Fashion</h3>
+                <p>Contemporary lifestyle apparel</p>
+                <span class="client-type">Brand</span>
+            </div>
+            <div class="client-card">
+                <h3>Pulse Beverages</h3>
+                <p>Premium beverage manufacturer</p>
+                <span class="client-type">Brand</span>
+            </div>
+            <div class="client-card">
+                <h3>Zenith Cosmetics</h3>
+                <p>Global beauty and skincare</p>
+                <span class="client-type">Brand</span>
+            </div>
+            <div class="client-card">
+                <h3>Quantum Gaming</h3>
+                <p>Next-gen gaming hardware</p>
+                <span class="client-type">Brand</span>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 2rem; margin-top: 4rem; text-align: center;">Streaming Platform Partners</h3>
+        <div class="clients-grid">
+            <div class="client-card">
+                <h3>StreamFlix</h3>
+                <p>Global streaming entertainment leader</p>
+                <span class="client-type">Streaming</span>
+            </div>
+            <div class="client-card">
+                <h3>PrimeView</h3>
+                <p>Premium streaming service</p>
+                <span class="client-type">Streaming</span>
+            </div>
+            <div class="client-card">
+                <h3>WaveTV</h3>
+                <p>Next-generation streaming platform</p>
+                <span class="client-type">Streaming</span>
+            </div>
+            <div class="client-card">
+                <h3>VisionStream+</h3>
+                <p>Original content streaming hub</p>
+                <span class="client-type">Streaming</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2 class="section-title">What Our Partners Say</h2>
+        <p class="section-subtitle">Real feedback from industry professionals</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Nedlia.com has completely transformed how we approach product placement. The ROI tracking is phenomenal, and our clients are seeing engagement rates we've never experienced before.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah Mitchell</h4>
+                        <p>VP of Marketing, Visionary Media Agency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">The plugin integration into our editing workflow was seamless. We can now place products with precision timing and track everything in real-time. This is the future of content monetization.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Marcus Rodriguez</h4>
+                        <p>Executive Producer, Crimson Studios</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">As a brand, we've always struggled to measure the impact of product placements. Nedlia's two-tier engagement model gives us clear metrics and incredible value for our marketing spend.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JC</div>
+                    <div class="author-info">
+                        <h4>Jennifer Chen</h4>
+                        <p>CMO, TechNova Electronics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Managing multiple brand partnerships across different productions used to be chaos. Nedlia's SaaS platform brings everything together beautifully. It's an essential tool for modern agencies.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DK</div>
+                    <div class="author-info">
+                        <h4>David Kim</h4>
+                        <p>Managing Director, Catalyst Marketing Group</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">The revenue sharing model made this an easy decision for us. Our viewers love the interactive shopping features, and it's opened up a whole new revenue stream without disrupting the viewing experience.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AL</div>
+                    <div class="author-info">
+                        <h4>Amanda Lopez</h4>
+                        <p>Director of Partnerships, StreamFlix</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Working with Nedlia has elevated our brand presence in premium content. The QR code integration is genius - it bridges the gap between passive viewing and active shopping perfectly.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RT</div>
+                    <div class="author-info">
+                        <h4>Robert Thompson</h4>
+                        <p>Brand Strategy Lead, Stellar Automotive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's revolutionize product placement together</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>287 Elliot Street<br>Newton, MA 02464</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>info@nedlia.com<br>partnerships@nedlia.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+1 (617) 555-NEDLIA<br>+1 (617) 555-6335</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.1234567890!2d-71.2087!3d42.3370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379f63c3a7c7d%3A0x1234567890abcdef!2s287%20Elliot%20St%2C%20Newton%2C%20MA%2002464!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nedlia.com. All rights reserved. | Revolutionizing Product Placement in Streaming Content</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">287 Elliot Street, Newton, MA 02464</p>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.client-card, .testimonial-card, .feature-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
